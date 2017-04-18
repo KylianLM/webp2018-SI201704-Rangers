@@ -17,4 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/admin', 'AdminController@index');
+// Admin Routes
+Route::group([
+    'namespace' => 'Admin',
+    'prefix' => 'admin',
+], function () {
+    Route::get('/', 'AdminController@index');
+    Route::get('/config', 'ConfigController@index');
+});
+
