@@ -8,9 +8,8 @@
                     <div class="panel-heading">
                         <h2>Configuration</h2>
                     </div>
-
                     <div class="panel-body">
-                        <form action="">
+                        <form action="{{route('configStore')}}" method="POST">
                             {{csrf_field()}}
                             <table class="table table-bordered">
                                 <thead>

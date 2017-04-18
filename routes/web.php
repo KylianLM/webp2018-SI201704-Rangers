@@ -23,6 +23,9 @@ Route::group([
     'prefix' => 'admin',
 ], function () {
     Route::get('/', 'AdminController@index');
+
+    //Config
     Route::get('/config', 'ConfigController@index');
+    Route::post('/config', 'ConfigController@store')->name('configStore');
 });
 

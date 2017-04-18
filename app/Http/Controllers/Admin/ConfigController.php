@@ -25,7 +25,22 @@ class ConfigController extends Controller
     public function index()
     {
         $data = \DB::table('config')->get();
-        return view('admin.config.index',['data' => $data]);
+
+        return view('admin.config.index', ['data' => $data]);
+    }
+
+    public function store(Request $request)
+    {
+        $config = collect($request->input());
+
+        $config = $config->except(['_token']);
+
+        $config->each(function ($item, $key) {
+            \DB::table('config')
+                ->where('id',$key)
+                ->update(['value' => $item]);
+        });
+       return back();
     }
 }
 
