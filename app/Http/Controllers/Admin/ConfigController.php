@@ -24,6 +24,8 @@ class ConfigController extends Controller
      */
     public function index()
     {
-        return view('admin.config.index');
+        $data = \DB::table('config')->get();
+        return view('admin.config.index',['data' => $data]);
     }
 }
+
