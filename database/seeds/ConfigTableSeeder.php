@@ -13,7 +13,8 @@ class ConfigTableSeeder extends Seeder
     {
         DB::table('config')->insert([
            'key' => 'App_title',
-            'value' => 'U&D'
+            'value' => 'U&D',
+            'meta' => 'Nom du site'
         ]);
     }
 }

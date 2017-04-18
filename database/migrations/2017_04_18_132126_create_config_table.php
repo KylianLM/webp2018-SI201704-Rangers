@@ -17,6 +17,7 @@ class CreateConfigTable extends Migration
             $table->increments('id');
             $table->string('key');
             $table->string('value');
+            $table->string('meta');
         });
     }
 
