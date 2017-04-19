@@ -1,43 +1,41 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h2>Préférences</h2>
-                    </div>
-                    <div class="panel-body">
-                        <form action="{{route('configStore')}}" method="POST">
-                            {{csrf_field()}}
+
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Préférences
+            </h1>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+
+            <form action="{{route('configStore')}}" method="POST">
+                {{csrf_field()}}
+                @foreach($data as $d)
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title"><label for="{{$d->id}}">
+                                    {{$d->meta}}
+                                </label></h3>
+                        </div>
+                        <div class="box-body">
                             <table class="table table-bordered">
-                                <thead>
-                                <tr>
-                                    <th class="col-md-2">Référence</th>
-                                    <th>Description</th>
-                                    <th class="col-md-6">Valeur</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($data as $d)
-                                    <tr>
-                                        <td>{{$d->key}}</td>
-                                        <td>
-                                            <label for="{{$d->id}}">
-                                                {{$d->meta}}
-                                            </label></td>
-                                        <td>
-                                            <input type="text" name="{{$d->id}}" value="{{$d->value}}" class="col-md-12"></td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
+                                <td class="col-md-2">{{$d->key}}</td>
+                                <td>
+                                    <input type="text" name="{{$d->id}}" value="{{$d->value}}" class="col-md-12">
+                                </td>
                             </table>
-                            <button type="submit" class="btn btn-primary pull-right">Modifier</button>
-                        </form>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                @endforeach
+                <button type="submit" class="btn btn-primary pull-right">Modifier</button>
+            </form>
+        </section>
+        <!-- /.content -->
     </div>
+
 @endsection
