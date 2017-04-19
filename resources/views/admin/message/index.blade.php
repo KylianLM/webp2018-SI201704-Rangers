@@ -63,7 +63,7 @@
                                             {{ method_field('PUT') }}
                                             <input type="hidden" name="label" value="important">
                                             <button type="submit" class="btn bg-orange btn-flat"><i
-                                                        class="fa fa-exclamation-circle"></i></button>
+                                                        class="fa fa-star"></i></button>
                                         </form>
                                     @endif
                                 </td>
