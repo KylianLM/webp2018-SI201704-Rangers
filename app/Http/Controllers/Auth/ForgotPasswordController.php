@@ -4,7 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Illuminate\Http\Request;
 
+/**
+ * Class ForgotPasswordController
+ * @package App\Http\Controllers\Auth
+ */
 class ForgotPasswordController extends Controller
 {
     /*
@@ -28,5 +33,22 @@ class ForgotPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    /**
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function showLinkRequestForm()
+    {
+        return redirect('/');
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function sendResetLinkEmail(Request $request)
+    {
+        return redirect('/');
     }
 }
