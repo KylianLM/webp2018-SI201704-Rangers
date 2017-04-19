@@ -15,7 +15,7 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
 </head>
@@ -69,15 +69,15 @@
             </div>
         </div>
         <div class="vid-filter"></div>
-    <!--<video id="bgvid" playsinline autoplay muted loop poster="img/bg@3x.jpg" >
+    <video id="bgvid" playsinline autoplay muted loop poster="img/bg@3x.jpg" >
   <source
     src="img/video.webm"
     type="video/webm">
   <source
     src="img/video.mp4"
     type="video/mp4">
-        </video>-->
-        <img id="bgvid" src="img/bg@3x.jpg">
+        </video>
+        {{--<img id="bgvid" src="img/bg@3x.jpg">--}}
     </section>
     <section class="sct" id="sct-about">
         <div class="sct_cont">
