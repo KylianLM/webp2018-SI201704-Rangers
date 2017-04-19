@@ -1,9 +1,9 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="{{config('app.locale')}}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
+    <title>{{$config['App_title']}}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -63,8 +63,8 @@
             <div class="sct_cnt cnt">
                 <a class="sct_button scroll-to" href="sct-about"><span class="icon icon-down"></span></a>
                 <ul class="sct_list list list-sociaux">
-                    <li class="list_item item"><a href="#" class="item_link icon icon-linkedin"></a></li>
-                    <li class="list_item item"><a href="#" class="item_link icon icon-facebook"></a></li>
+                    <li class="list_item item"><a href="{{$config['Link_social_in']}}" class="item_link icon icon-linkedin"></a></li>
+                    <li class="list_item item"><a href="{{$config['Link_social_fb']}}" class="item_link icon icon-facebook"></a></li>
                 </ul>
             </div>
         </div>
