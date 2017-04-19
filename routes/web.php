@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('logout', 'Auth\LoginController@logout');
+
 
 // Admin Routes
 Route::group([
