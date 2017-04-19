@@ -1,0 +1,134 @@
+/*INTRO*/
+#sct-intro {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#sct-intro .sct_cont {
+    background: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#sct-intro .sct_title {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+#sct-intro .title_main {
+    width: 80%;
+    margin: 0 auto;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: 1px;
+}
+
+#sct-intro .sct_cnt {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    line-height: 1;
+    width: 84%;
+}
+#sct-intro .sct_button{
+    display: inline-block;
+    padding: 12px 15px;
+    margin-top: 20px;
+}
+/*VIDEO*/
+.vid-filter {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transform-origin: 50% 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    left: 80px;
+    z-index: -1;
+    transition: all ease-out 1.4s;
+    background-blend-mode: exclusion;
+    mix-blend-mode: exclusion;
+}
+
+#bgvid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -10;
+    transform: translateX(-50%) translateY(-50%);
+    background: url('../img/bg@3x.jpg') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+}
+
+/*SOCIAUX*/
+.list-sociaux {
+    float: right;
+}
+
+.list-sociaux .item {
+    background: #111752;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: block;
+}
+.list-sociaux .icon{
+    position: absolute;
+    top:50%;
+    left:50%;
+    color: #fff;
+    font-size: 12px;
+    text-decoration:none;
+    transform: translate(-50%,-50%);
+
+}
+.list-sociaux .icon:hover,
+.list-sociaux .icon:focus,
+.list-sociaux .icon:active{
+    text-decoration:none;
+}
+.list-sociaux .item + .item {
+    margin-left: 30px;
+}
+@media all and (min-width: 768px) {
+    #sct-intro .sct_cont {
+        width: 80%;
+        height: calc(100% - 70px);
+    }
+    #sct-intro .title_main {
+        width: 80%;
+        max-width: 580px;
+        font-size: 28px;
+        line-height: 40px;
+        letter-spacing: 1px;
+    }
+    .vid-filter {
+        width: 200px;
+        height: 200px;
+    }
+}
+@media all and (min-width: 990px) {
+    #sct-intro .title_main {
+        font-size: 36px;
+        line-height: 48px;
+        letter-spacing: 3px;
+    }
+}

@@ -1,0 +1,138 @@
+/*CAROUSEL*/
+#sct-carousel {
+    min-height: 0;
+    display: block;
+}
+
+#sct-carousel .sct_cont {
+    padding: 0;
+    min-width: 0;
+    max-width: none;
+}
+
+.owl-nav {
+    position: absolute;
+    bottom: -2px;
+    right: -20%;
+}
+
+.owl-nav > div {
+    display: inline-block;
+    background: #ffd740;
+    padding: 10px 15px;
+    opacity: 1;
+    transition: all .2s;
+}
+
+.owl-nav > div:hover,
+.owl-nav > div:focus,
+.owl-nav > div:active {
+    opacity: 0.8;
+    transition: all .2s;
+}
+
+.owl-stage,
+.owl-item,
+.owl-stage-outer {
+    width: 100%;
+}
+
+.owl-carousel .owl-item .item_img {
+    height: auto;
+    width: 100%;
+    min-height: 101%;
+    min-width: 101%;
+}
+
+/*FIRST CAROUSEL*/
+.first-carousel {
+    background: #fff;
+}
+
+.first-carousel.owl-loaded {
+    width: 100%;
+    z-index: 10;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.first-carousel .owl-item .item {
+    min-width: 300px;
+    width: 100%;
+    background: #fff;
+    padding: 10%;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.first-carousel .owl-nav {
+    top: 0;
+    right: 0;
+}
+
+/*SECOND CAROUSEL*/
+.second-carousel {
+    margin-bottom: 380px;
+}
+
+.second-carousel .owl-item {
+    opacity: 0.2;
+    transition: opacity .7s;
+}
+
+.second-carousel .owl-item.active {
+    opacity: 1;
+    transition: opacity .7s;
+}
+
+.second-carousel .owl-item .item {
+    height: 210px;
+}
+
+@media all and (min-width: 768px) {
+
+    .second-carousel {
+        margin-bottom: 0;
+    }
+    .second-carousel .owl-item .item {
+        height: 420px;
+    }
+
+    .first-carousel.owl-loaded {
+        left: 45px;
+        top: auto;
+        position: absolute;
+        width: 30%;
+        min-width: 400px;
+        margin-bottom: 0;
+    }
+
+    .first-carousel .owl-item .item {
+        width: 30%;
+        min-width: 400px;
+        height: 420px;
+        padding: 50px;
+    }
+
+    .first-carousel .owl-nav {
+        bottom: -2px;
+        right: -10%;
+        top: auto;
+        left: auto;
+        background: #fff;
+    }
+}
+
+@media all and (min-width: 990px) {
+    .first-carousel.owl-loaded {
+        left: 150px;
+        width: 30%;
+        min-width: 400px;
+    }
+
+    .first-carousel .owl-item .item {
+        width: 30%;
+        min-width: 400px;
+    }
+}
