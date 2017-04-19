@@ -31,7 +31,16 @@
                             <td>{{$message->name}}</td>
                             <td>{{$message->subject}}</td>
                             <td>{{$message->created_at->format('j F Y à H:i')}}</td>
-                            <td></td>
+                            <td>
+                                <form action="{{ route('message.destroy', $message->id) }}" method="POST">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;Supprimer
+                                    </button>
+                                    <a class="btn btn-info" href="{{route('message.show',[$message->id])}}"
+                                       role="button"><i class="fa fa-eye"></i>&nbsp;Afficher</a>
+                                </form>
+                            </td>
                         @empty
                             <td colspan="6" style="text-align: center ">Aucun message</td>
                         @endforelse
