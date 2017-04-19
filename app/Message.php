@@ -22,4 +22,8 @@ class Message extends Model
         'label',
 
     ];
+
+    protected $dates = [
+      'created_at'
+    ];
 }

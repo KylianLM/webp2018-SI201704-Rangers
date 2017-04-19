@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Message;
 use Illuminate\Http\Request;
 
 /**
@@ -25,9 +26,14 @@ class MessageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.message.index');
+       if ($request->get('label') === 'important') {
+           $messages = Message::where('label', '=', 'important')->get();
+       } else {
+           $messages = Message::get();
+       }
+        return view('admin.message.index',['messages' => $messages]);
     }
 
     /**
