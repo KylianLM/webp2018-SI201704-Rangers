@@ -29,5 +29,10 @@ Route::group([
     //Config
     Route::get('/config', 'ConfigController@index')->name('config');
     Route::post('/config', 'ConfigController@store')->name('configStore');
+
+    //Messages
+    Route::resource('message','MessageController',[
+        'except' => ['create']
+    ]);
 });
 

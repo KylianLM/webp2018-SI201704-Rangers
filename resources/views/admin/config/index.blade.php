@@ -29,6 +29,9 @@
                                     <input type="text" name="{{$d->id}}" value="{{$d->value}}" class="col-md-12">
                                 </td>
                             </table>
+                            @if(substr($d->key,0,4) == 'Link')
+                                <small><a href="{{$d->value}}" target="_blank">{{$d->value}}</a></small>
+                            @endif
                         </div>
                     </div>
                 @endforeach

@@ -81,9 +81,8 @@
                 <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                 <li><a href="{{route('config')}}"><i class="fa fa-cogs"></i> <span>Préférences</span></a></li>
                 <li class="header">MESSAGES</li>
-                <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-                <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-                <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+                <li><a href="{{route('message.index')}}"><i class="fa fa-circle-o text-aqua"></i> <span>Tous les messages</span></a></li>
+                <li><a href="{{route('message.index', ['label' => 'important'])}}"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
             </ul>
         </section>
         <!-- /.sidebar -->
