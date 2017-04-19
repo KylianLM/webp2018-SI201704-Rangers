@@ -5,8 +5,21 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+/**
+ * Class MessageController
+ * @package App\Http\Controllers\Admin
+ */
 class MessageController extends Controller
 {
+
+    /**
+     * MessageController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth',['except' =>['store']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
