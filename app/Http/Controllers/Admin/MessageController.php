@@ -78,7 +78,10 @@ class MessageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Message::findOrFail($id)
+            ->update($request->input());
+
+        return back()->with('message_update','Message devenu important');
     }
 
     /**
@@ -91,6 +94,6 @@ class MessageController extends Controller
     {
         Message::findOrFail($id)->delete();
 
-        return back()->with('message_delete', 'Message Supprimé');
+        return back()->with('message_delete', 'Message supprimé');
     }
 }
