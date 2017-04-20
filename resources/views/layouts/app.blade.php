@@ -11,7 +11,7 @@
     <title>{{$config['App_title']}}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
     <!-- Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
@@ -108,7 +108,7 @@
 <!-- ./wrapper -->
 
     <!-- Scripts -->
-    <script src="{{ asset('js/jquery.js') }}"></script>
-    <script src="{{ asset('js/admin.js') }}"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/admin.js"></script>
 </body>
 </html>

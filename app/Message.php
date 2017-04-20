@@ -20,7 +20,6 @@ class Message extends Model
         'body',
         'callback',
         'label',
-
     ];
 
     protected $dates = [

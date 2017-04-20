@@ -1,0 +1,16 @@
+#sct-intro:not(.sct-loaded) .sct_cont{
+    bottom:-100%;
+    transition: all  1s;
+}
+#sct-intro .sct_cont{
+    bottom:0;
+    transition: all 1s;
+}
+#sct-intro #bgvid{
+    opacity: 1;
+    transition: all  1s;
+}
+#sct-intro:not(.sct-loaded) #bgvid{
+    opacity: 0;
+    transition: all  1s;
+}
