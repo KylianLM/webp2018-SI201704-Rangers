@@ -25,7 +25,11 @@ class CollabController extends Controller
             ->where('meta->page',"=","collaborateur")
             ->first();
 
-        return view('admin.collab.index',['content' => $content]);
+        $collabs = \DB::table('collab')
+            ->select('name','fonction','created_at')
+            ->get();
+
+        return view('admin.collab.index',['content' => $content, 'collabs' => $collabs]);
     }
 
     /**
