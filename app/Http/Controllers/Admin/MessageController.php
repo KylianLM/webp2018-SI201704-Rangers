@@ -45,7 +45,7 @@ class MessageController extends Controller
      */
     public function store(StoreMessage $request)
     {
-        //
+        return response()->json('ok');
     }
 
     /**

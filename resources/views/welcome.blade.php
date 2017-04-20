@@ -20,6 +20,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
+    <script>
+        window.Laravel = {!! json_encode([
+            'csrfToken' => csrf_token(),
+        ]) !!};
+    </script>
 </head>
 <body>
 <!--[if lt IE 10]>
@@ -287,7 +292,8 @@
                         </p>
                     </div>
                 </div>
-                <form class="sct-form form sct_col col-8">
+                <form class="sct-form form sct_col col-8" name="contact">
+                    {{csrf_field()}}
                     <div class="form_cont">
                         <div class="sct_row">
                             <div class="sct_col col-6">
@@ -325,7 +331,7 @@
                                            name="">
                                 </div>
                                 <div>
-                                    <label for="rappel" class="form_label form_label-inline">Heure</label>
+                                    <label for="datetimepicker" class="form_label form_label-inline">Heure</label>
                                     <input id="datetimepicker" class="form_input input-date" type="text" name="time"/>
                                 </div>
                             </div>

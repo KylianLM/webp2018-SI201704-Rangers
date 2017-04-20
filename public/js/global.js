@@ -1,9 +1,43 @@
 (function () {
     $(document).ready(function () {
+        $('form[name="contact"]').submit(function (e) {
+            e.preventDefault();
+            var body = $('#message').val(),
+                subject = $('#subject').val(),
+                email = $('#email').val(),
+                name = $('#name').val(),
+                callback = ($('#rappel').is(':checked'))?1:0,
+                token = $('input[name="_token"]').attr('value'),
+                time = $('#datetimepicker').val(),
+                phone = $('#tel').val();
+            console.log(token,body,subject,email,name,phone);
+
+            if(body != "" && subject != "" && email != "" && name!="" && phone != "" && token != "") {
+                console.log('kjj');
+                $.ajax({
+                    method: "POST",
+                    url: "/admin/message/",
+                    data: {
+                        email: email,
+                        phone: phone,
+                        name: name,
+                        subject: subject,
+                        body: body,
+                        _token : token,
+                        time: time,
+                        callback: callback
+                    }
+                }).done(function (msg) {
+                    alert("Data Saved: " + msg);
+                });
+            }
+        });
+
         $.datetimepicker.setLocale('fr_FR');
         $('#datetimepicker').datetimepicker({
-            format:'d.m.Y H:i',
-            lang:'fr'
+            datepicker:false,
+            format: 'H:i',
+            lang: 'fr'
         });
         //scroll
         $('.scroll-to').click(function (event) {
