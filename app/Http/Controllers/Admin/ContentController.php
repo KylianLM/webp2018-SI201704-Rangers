@@ -19,7 +19,11 @@ class ContentController extends Controller
      */
     public function index()
     {
-        return view('admin.content.index');
+        $content = \DB::table('content')
+            ->select('content','slug', 'meta')
+            ->get();
+
+        return view('admin.content.index',['content' => $content]);
     }
 
     /**
