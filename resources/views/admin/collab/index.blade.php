@@ -16,6 +16,7 @@
                     <h3 class="box-title">{{json_decode($content->meta)->name}}</h3>
                 </div>
                 <form action="">
+                    {{csrf_field()}}
                     <div class="box-body">
                         <textarea id="description" class="form-control" name="{{$content->slug}}"
                                   rows="5"> {{$content->content}}</textarea>

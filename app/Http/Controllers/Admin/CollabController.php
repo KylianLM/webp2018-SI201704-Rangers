@@ -39,7 +39,7 @@ class CollabController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.collab.create');
     }
 
     /**
@@ -50,7 +50,10 @@ class CollabController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        \DB::table('collab')
+        ->insert($request->except('_token'));
+
+        return redirect()->route('collaborateurs.index')->with('collaborateur_add', 'Collaborateur ajouté');
     }
 
     /**
