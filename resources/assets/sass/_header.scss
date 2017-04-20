@@ -1,0 +1,130 @@
+/*HEADER MOBILE
+.header {
+    height: 100%;
+    background: #111752;
+    top:0;
+}
+.header_bg{
+    display: none;
+}
+.header_nav{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    bottom:0;
+    right: 0;
+}
+.header_nav .list{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+.header_nav .item{
+    display: block;
+}
+.header_nav .item_link{
+    color: #fff;
+}*/
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0);
+}
+
+.header.fixed-header {
+    position: fixed;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: background ease-out .3s;
+}
+
+.header.fixed-header .header_bg {
+    height: 60px;
+    transition: height cubic-bezier(0.215, 0.610, 0.355, 1.000) .3s;
+}
+.header.fixed-header .header_nav{
+    bottom: -15px;
+}
+.header.fixed-header  .header_nav .list {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.header_cont {
+    height: 100%;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+}
+
+.header_bg {
+    background: #ffd740;
+    height: 120px;
+    width: 20%;
+    margin: 0;
+    top: 0;
+    position: fixed;
+    transition: height .5s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+
+.header_nav {
+    display: none;
+    position: absolute;
+    right: 3%;
+    width: 80%;
+    bottom: 0;
+    z-index: 10;
+}
+.header_nav .list {
+    display: inline-block;
+    width: 100%;
+}
+
+.header_nav .item {
+    margin: 0 2%;
+}
+
+.header_nav .item_link {
+    font-family: Montserrat, sans-serif;
+    text-transform: uppercase;
+    color: #111752;
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.header_nav .item .item_link:after {
+    content: '';
+    margin: 15px 0;
+    display: block;
+    background: #111752;
+    width: 0;
+    transition: width cubic-bezier(0.215, 0.610, 0.355, 1.000) .3s;
+    height: 2px;
+}
+
+.header_nav .item:focus .item_link:after,
+.header_nav .item:active .item_link:after,
+.header_nav .item:hover .item_link:after,
+.header_nav .item-active .item_link:after {
+    width: 100%;
+    transition: width cubic-bezier(0.215, 0.610, 0.355, 1.000) .3s;
+}
+@media all and (min-width: 768px) {
+    .header_nav {
+        display: block;
+    }
+    .header_nav .list {
+        text-align: right;
+    }
+}
+@media all and (min-width: 990px) {
+    .header_nav .item {
+        margin: 0 3%;
+    }
+}

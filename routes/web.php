@@ -16,5 +16,23 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('logout', 'Auth\LoginController@logout');
 
-Route::get('/admin', 'AdminController@index');
+
+// Admin Routes
+Route::group([
+    'namespace' => 'Admin',
+    'prefix' => 'admin',
+], function () {
+    Route::get('/', 'AdminController@index')->name('admin');
+
+    //Config
+    Route::get('/config', 'ConfigController@index')->name('config');
+    Route::post('/config', 'ConfigController@store')->name('configStore');
+
+    //Messages
+    Route::resource('message','MessageController',[
+        'except' => ['create']
+    ]);
+});
+
