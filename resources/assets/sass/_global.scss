@@ -1,4 +1,45 @@
 /*GENERAL*/
+.browserupgrade{
+    position: fixed;
+    border: 70px solid #fff;
+    z-index: 100;
+    background: #111752;
+    height: 100vh;
+    width: 100%;
+    color: #fff;
+    font-family: Montserrat, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 54px;
+    letter-spacing: 3px;
+    box-sizing: border-box;
+}
+.browserupgrade p{
+    position: absolute;
+    width: 60%;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+.browserupgrade p:after,
+.browserupgrade p:before {
+    content: '';
+    display: block;
+    width: 17px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: -20%;
+}
+.browserupgrade p:after{
+    top:auto;
+    bottom:-20%;
+}
+.browserupgrade a{
+    color: #fff;
+}
 main {
     overflow: hidden;
     font-family: Montserrat, Helvetica, sans-serif;
@@ -40,13 +81,22 @@ main {
     font-size: 14px;
     letter-spacing: 1px;
     font-weight: 400;
+    font-family: Montserrat,sans-serif;
     color: rgba(17, 23, 82, 0.45);
     text-decoration: underline;
     margin-bottom: 45px;
 }
-
-.title_mainEmph-light {
-    color: #ffd740;
+.title_main i{
+    display: inline-block;
+    line-height: 1.3;
+    position: relative;
+}
+.title_main i:after {
+    display: block;
+    content:'';
+    width: 100%;
+    background: #111752;
+    height: 1px;
 }
 
 .cnt {
@@ -67,6 +117,7 @@ main {
     position: relative;
     text-decoration: none;
     color: #111752;
+    cursor: pointer;
     transition: color cubic-bezier(0.215, 0.610, 0.355, 1.000) .3s;
 }
 
@@ -172,4 +223,13 @@ main {
         font-size: 18px;
         line-height: 1.67;
     }
+}
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default, .xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div.xdsoft_current{
+    background: #111752 !important;
+    box-shadow: none !important;
+}
+.xdsoft_datetimepicker .xdsoft_calendar td:hover, .xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box>div>div:hover{
+    background: #ffd740 !important;
+    color: #111752 !important;
+    box-shadow: none !important;
 }

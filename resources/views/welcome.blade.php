@@ -6,30 +6,36 @@
     <title>{{$config['App_title']}}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="css/styles.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <script src="js/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
 </head>
 <body>
 <!--[if lt IE 10]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-    your browser</a> to improve your experience.</p>
+<div class="browserupgrade">
+    <p>Vous utilisez une ancien navigateur. Merci <a href="http://browsehappy.com/"> de mettre à jour
+        celui-ci </a> pour améliorer votre expérience.</p>
+</div>
 <![endif]-->
 <main class="main">
     <header class="header">
+        <div class="header-mob">
+            <span class="header-mob_row"></span>
+            <span class="header-mob_row"></span>
+            <span class="header-mob_row"></span>
+        </div>
         <div class="header_cont">
-            <h1 class="header_logo">
-                <!--<img src="#" alt="U&D">-->
-            </h1>
             <nav class="header_nav">
                 <ul class="list list-header">
                     <li class="list_item item item-active">
@@ -49,7 +55,11 @@
                     </li>
                 </ul>
             </nav>
-            <div class="header_bg"></div>
+            <div class="header_bg">
+                <h1 class="header_logo">
+                    <img src="img/logo.png" alt="U&D">
+                </h1>
+            </div>
         </div>
     </header>
     <section class="sct" id="sct-intro">
@@ -201,8 +211,8 @@
                 <ul class="sct_list list sct_row">
                     <li class="list_item item sct_col col-4">
                         <div class="item_title title">
-                            <h1 class="title_main">
-                                {{explode(' ',$content['number_1'],2)[0]}}
+                            <h1 data-count="{{explode(' ',$content['number_1'],2)[0]}}" class="title_main count">
+                                0
                             </h1>
                         </div>
                         <p class="item_pg">
@@ -211,8 +221,8 @@
                     </li>
                     <li class="list_item item sct_col col-4">
                         <div class="item_title title">
-                            <h1 class="title_main">
-                                {{explode(' ',$content['number_2'],2)[0]}}
+                            <h1 data-count="{{explode(' ',$content['number_2'],2)[0]}}" class="title_main count">
+                                0
                             </h1>
                         </div>
                         <p class="item_pg">
@@ -221,8 +231,8 @@
                     </li>
                     <li class="list_item item sct_col col-4">
                         <div class="item_title title">
-                            <h1 class="title_main">
-                                {{explode(' ',$content['number_3'],2)[0]}}
+                            <h1 data-count="{{explode(' ',$content['number_3'],2)[0]}}" class="title_main count">
+                                0
                             </h1>
                         </div>
                         <p class="item_pg">
@@ -307,13 +317,19 @@
                             </div>
                         </div>
                         <div class="sct_row">
-                            <div class="sct_col col-6">
-                                <input id="rappel" type="checkbox" class="form_input input-checkbox" placeholder=""
-                                       name="">
-                                <label for="rappel" class="form_label form_label-inline">Souhaitez vous être appellé
-                                    ?</label>
+                            <div class="sct_col col-8">
+                                <div>
+                                    <label for="rappel" class="form_label form_label-inline">Souhaitez vous être appellé
+                                        ?</label>
+                                    <input id="rappel" type="checkbox" class="form_input input-checkbox" placeholder=""
+                                           name="">
+                                </div>
+                                <div>
+                                    <label for="rappel" class="form_label form_label-inline">Heure</label>
+                                    <input id="datetimepicker" class="form_input input-date" type="text" name="time"/>
+                                </div>
                             </div>
-                            <div class="sct_col col-6">
+                            <div class="sct_col col-4">
                                 <input type="submit" class="form_input input-submit" value="Envoyer">
                             </div>
                         </div>

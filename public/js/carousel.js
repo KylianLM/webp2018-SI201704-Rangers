@@ -66,6 +66,13 @@
                 0:{
                     items:1
                 },
+                465:{
+                    items:2,
+                    margin: 50
+                },
+                768:{
+                    items:1
+                },
                 990:{
                     items:2
                 }

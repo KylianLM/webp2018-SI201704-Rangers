@@ -14,4 +14,11 @@
     background: #111752;
     border: #111752;
     color:#fff;
+    transition : all .3s;
+}
+.footer .sct_button:hover,
+.footer .sct_button:active,
+.footer .sct_button:focus{
+    bottom:60px;
+    transition : all .3s;
 }

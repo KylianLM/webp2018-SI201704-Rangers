@@ -6,8 +6,12 @@
         }
         $('.main').addClass('main-loaded');
         $('#sct-intro').addClass('sct-loaded');
+        displayAnim();
+
         $(window).scroll(function(){
-            //displayAnim('.main>section,.main>div');
+
+            displayAnim();
+
            if($('#sct-intro .sct_cont').offset().top + 7 < $(window).scrollTop()){
                $('header').addClass('fixed-header');
            }else{
@@ -27,4 +31,46 @@
             });
         }
     });
+    var deltaTop = function (elem) {
+        var elemTarget = $('#'+elem);
+        if (elemTarget.length) {
+            var elemTargetH = elemTarget.height(),
+                deltaIn = elemTarget.offset().top - (elemTargetH*2),
+                deltaOut = deltaIn + elemTargetH  + (elemTargetH*2);
+
+            if ($(window).scrollTop() > deltaIn && $(window).scrollTop() < deltaOut) {
+                return true;
+            }
+
+        }
+        return false;
+    };
+    var displayAnim = function(){
+        if(deltaTop('sct-number')){
+            animNumber();
+        }
+    }
+    var animNumber = function(){
+        var numbers = $('.count');
+        if(numbers.length > 0){
+            numbers.each(function() {
+                var $this = $(this),
+                    countTo = $this.attr('data-count');
+                $({ countNum: $this.text()}).animate({
+                        countNum: countTo
+                    },
+                    {
+                        duration: 1000,
+                        easing:'linear',
+                        step: function() {
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function() {
+                            $this.text(this.countNum);
+                        }
+
+                    });
+            });
+        }
+    }
 }());
