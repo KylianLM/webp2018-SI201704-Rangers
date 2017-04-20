@@ -93,58 +93,30 @@
                 </div>
                 <div class="sct_cnt cnt">
                     <p class="cnt_pg">
-                        <strong>U&D</strong> s'est spécialisée dans les ouvrages "haut de gamme", en s'appuyant sur
-                        l'expérience et le savoir faire d'une équipe de collaborateurs performants.
-                        <br>
-                        <br>
-                        C'est pour vous la garantie d'un travail soigné, d'un chantier propre, de l'utilisation des
-                        dernières technologies et des matériaux les plus performants, bref de votre totale satisfaction.
+                       {!! $content['collaborateur'] !!}
                     </p>
                 </div>
             </div>
             <div class="sct_carousel owl-carousel about-carousel">
+                @foreach($collabs as $collab)
                 <div class="item">
                     <div class="item_container">
-                        <img class="item_img" src="img/profil.jpg" alt="#">
+                        <img class="item_img" src="/profil/{{$collab->img}}" alt="#">
                     </div>
                     <div class="item_title title">
                         <h1 class="title_main">
-                            Ulrique <br> David
+                           {{$collab->name}}
+                            <br>
+                            {{$collab->firstname}}
                         </h1>
                         <h2 class="title_scd">
-                            Directeur Associé
+                           {{$collab->fonction}}
                         </h2>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="item_container">
-                        <img class="item_img" src="img/profil.jpg" alt="#">
-                    </div>
-                    <div class="item_title title">
-                        <h1 class="title_main">
-                            Denis <br> Alexandre
-                        </h1>
-                        <h2 class="title_scd">
-                            Directeur Associé
-                            <br>et Manager
-                        </h2>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item_container">
-                        <img class="item_img" src="img/bg@3x.jpg" alt="#">
-                    </div>
-                    <div class="item_title title">
-                        <h1 class="title_main">
-                            Denis <br> Alexandre
-                        </h1>
-                        <h2 class="title_scd">
-                            Directeur Associé
-                            <br>et Manager
-                        </h2>
-                    </div>
-                </div>
+               @endforeach
             </div>
+        </div>
     </section>
     <section class="sct" id="sct-carousel">
         <div class="sct_cont">

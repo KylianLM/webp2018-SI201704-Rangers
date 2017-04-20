@@ -33,5 +33,6 @@ Route::group([
     Route::resource('content', 'ContentController',[
         'except' => ['store', 'destroy']
     ]);
+    Route::resource('collaborateurs','CollabController');
 });
 
