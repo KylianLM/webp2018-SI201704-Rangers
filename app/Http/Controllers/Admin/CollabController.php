@@ -20,7 +20,12 @@ class CollabController extends Controller
      */
     public function index()
     {
-        return view('admin.collab.index');
+        $content = \DB::table('content')
+            ->select('content','slug', 'meta')
+            ->where('meta->page',"=","collaborateur")
+            ->first();
+
+        return view('admin.collab.index',['content' => $content]);
     }
 
     /**

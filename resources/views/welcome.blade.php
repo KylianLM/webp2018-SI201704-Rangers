@@ -93,12 +93,7 @@
                 </div>
                 <div class="sct_cnt cnt">
                     <p class="cnt_pg">
-                        <strong>U&D</strong> s'est spécialisée dans les ouvrages "haut de gamme", en s'appuyant sur
-                        l'expérience et le savoir faire d'une équipe de collaborateurs performants.
-                        <br>
-                        <br>
-                        C'est pour vous la garantie d'un travail soigné, d'un chantier propre, de l'utilisation des
-                        dernières technologies et des matériaux les plus performants, bref de votre totale satisfaction.
+                       {!! $content['collaborateur'] !!}
                     </p>
                 </div>
             </div>

@@ -21,6 +21,7 @@ class ContentController extends Controller
     {
         $content = \DB::table('content')
             ->select('content','slug', 'meta')
+            ->where('meta->page',"=","content")
             ->get();
 
         return view('admin.content.index',['content' => $content]);
