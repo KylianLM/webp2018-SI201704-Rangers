@@ -34,5 +34,8 @@ Route::group([
     Route::resource('message','MessageController',[
         'except' => ['create']
     ]);
+    Route::resource('content', 'ContentController',[
+        'except' => ['create', 'destroy']
+    ]);
 });
 
