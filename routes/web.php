@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
 Route::get('logout', 'Auth\LoginController@logout');
@@ -31,8 +29,9 @@ Route::group([
     Route::post('/config', 'ConfigController@store')->name('configStore');
 
     //Messages
-    Route::resource('message','MessageController',[
-        'except' => ['create']
+    Route::resource('message','MessageController');
+    Route::resource('content', 'ContentController',[
+        'except' => ['store', 'destroy']
     ]);
 });
 

@@ -56,26 +56,27 @@
         <div class="sct_cont sct_row">
             <div class="sct_title title">
                 <h1 class="title_main">
-                    La <span class="title_mainEmph title_mainEmph-light">construction</span> un domaine
-                    qui nous <span class="title_mainEmph title_mainEmph-light">connais</span> bien.
+                    {!! $content['title'] !!}
                 </h1>
             </div>
             <div class="sct_cnt cnt">
                 <a class="sct_button scroll-to" href="sct-about"><span class="icon icon-down"></span></a>
                 <ul class="sct_list list list-sociaux">
-                    <li class="list_item item"><a href="{{$config['Link_social_in']}}" class="item_link icon icon-linkedin"></a></li>
-                    <li class="list_item item"><a href="{{$config['Link_social_fb']}}" class="item_link icon icon-facebook"></a></li>
+                    <li class="list_item item"><a href="{{$config['Link_social_in']}}"
+                                                  class="item_link icon icon-linkedin"></a></li>
+                    <li class="list_item item"><a href="{{$config['Link_social_fb']}}"
+                                                  class="item_link icon icon-facebook"></a></li>
                 </ul>
             </div>
         </div>
         <div class="vid-filter"></div>
-    <video id="bgvid" playsinline autoplay muted loop poster="img/bg@3x.jpg" >
-  <source
-    src="img/video.webm"
-    type="video/webm">
-  <source
-    src="img/video.mp4"
-    type="video/mp4">
+        <video id="bgvid" playsinline autoplay muted loop poster="img/bg@3x.jpg">
+            <source
+                    src="img/video.webm"
+                    type="video/webm">
+            <source
+                    src="img/video.mp4"
+                    type="video/mp4">
         </video>
         {{--<img id="bgvid" src="img/bg@3x.jpg">--}}
     </section>
@@ -229,31 +230,31 @@
                     <li class="list_item item sct_col col-4">
                         <div class="item_title title">
                             <h1 class="title_main">
-                                26
+                                {{explode(' ',$content['number_1'],2)[0]}}
                             </h1>
                         </div>
                         <p class="item_pg">
-                            chantiers
+                            {{explode(' ',$content['number_1'],2)[1]}}
                         </p>
                     </li>
                     <li class="list_item item sct_col col-4">
                         <div class="item_title title">
                             <h1 class="title_main">
-                                15
+                                {{explode(' ',$content['number_2'],2)[0]}}
                             </h1>
                         </div>
                         <p class="item_pg">
-                            rénovations
+                            {{explode(' ',$content['number_2'],2)[1]}}
                         </p>
                     </li>
                     <li class="list_item item sct_col col-4">
                         <div class="item_title title">
                             <h1 class="title_main">
-                                1200
+                                {{explode(' ',$content['number_3'],2)[0]}}
                             </h1>
                         </div>
                         <p class="item_pg">
-                            devis par mois
+                            {{explode(' ',$content['number_3'],2)[1]}}
                         </p>
                     </li>
                 </ul>
@@ -263,11 +264,21 @@
     <section class="sct" id="sct-partners">
         <div class="sct_cont">
             <div class="sct_carousel owl-carousel partners-carousel">
-                <div class="item"><div class="item_container"><img class="item_img" src="img/Part1.png" alt="#"></div></div>
-                <div class="item"><div class="item_container"><img class="item_img" src="img/part2-bleu.png" alt="#"></div></div>
-                <div class="item"><div class="item_container"><img class="item_img" src="img/part3-bleu.png" alt="#"></div></div>
-                <div class="item"><div class="item_container"><img class="item_img" src="img/part4-bleu.png" alt="#"></div></div>
-                <div class="item"><div class="item_container"><img class="item_img" src="img/part5-bleu.png" alt="#"></div></div>
+                <div class="item">
+                    <div class="item_container"><img class="item_img" src="img/Part1.png" alt="#"></div>
+                </div>
+                <div class="item">
+                    <div class="item_container"><img class="item_img" src="img/part2-bleu.png" alt="#"></div>
+                </div>
+                <div class="item">
+                    <div class="item_container"><img class="item_img" src="img/part3-bleu.png" alt="#"></div>
+                </div>
+                <div class="item">
+                    <div class="item_container"><img class="item_img" src="img/part4-bleu.png" alt="#"></div>
+                </div>
+                <div class="item">
+                    <div class="item_container"><img class="item_img" src="img/part5-bleu.png" alt="#"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -356,7 +367,7 @@
 <script src="js/animations.js"></script>
 <script>
     function initMap() {
-        var paris = {lat:48.8699607, lng: 2.4652697};
+        var paris = {lat: 48.8699607, lng: 2.4652697};
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 15,
             center: paris
