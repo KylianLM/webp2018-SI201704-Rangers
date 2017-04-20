@@ -31,16 +31,25 @@
                 </div>
             </div>
             @foreach($content as $d)
-                <div class="box">
-                    <div class="box-header with-border">
-                        <h3 class="box-title"><label for="{{$d->slug}}">{{json_decode($d->meta)->name}}</label></h3>
+                @isset(json_decode($d->meta)->size)
+                @if(json_decode($d->meta)->size === 'small')
+                    <div class="col-md-4">
+                        @endif
+                        @endisset
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title"><label for="{{$d->slug}}">{{json_decode($d->meta)->name}}</label>
+                                </h3>
+                            </div>
+                            <div class="box-body">
+                                <input type="{{json_decode($d->meta)->type}}" name="{{$d->slug}}"
+                                       class="col-md-12 form-control input-lg" value="{{$d->content}}">
+                            </div>
+                        </div>
+                        @isset(json_decode($d->meta)->size)
                     </div>
-                    <div class="box-body">
-                        <input type="{{json_decode($d->meta)->type}}" name="{{$d->slug}}" class="col-md-12 form-control input-lg" value="{{$d->content}}">
-                    </div>
-                </div>
-            @endforeach
-            {{$content}}
+                    @endisset
+                    @endforeach
         </section>
         <!-- /.content -->
     </div>
