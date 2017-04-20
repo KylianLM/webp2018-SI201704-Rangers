@@ -27,7 +27,7 @@ class CollabController extends Controller
             ->first();
 
         $collabs = \DB::table('collab')
-            ->select('name','fonction','created_at')
+            ->select('name','firstname','fonction','created_at')
             ->get();
 
         return view('admin.collab.index',['content' => $content, 'collabs' => $collabs]);

@@ -41,7 +41,8 @@
                             <table class="table table-hover">
                                 <thead>
                                 <tr>
-                                    <th>Nom - Prénom</th>
+                                    <th>Nom</th>
+                                    <th>Prénom</th>
                                     <th>Fonction</th>
                                     <th>Ajouté le</th>
                                     <th>Actions</th>
@@ -51,6 +52,7 @@
                                 @foreach($collabs as $collab)
                                     <tr>
                                         <td>{{$collab->name}}</td>
+                                        <td>{{$collab->firstname}}</td>
                                         <td>{{$collab->fonction}}</td>
                                         <td>{{Carbon\Carbon::parse($collab->created_at)->format('d/m/Y H:i')}}</td>
                                         <td></td>

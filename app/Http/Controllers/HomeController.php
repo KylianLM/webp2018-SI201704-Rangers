@@ -18,7 +18,7 @@ class HomeController extends Controller
         $content->all();
 
         $collabs = \DB::table('collab')
-            ->select('name','fonction','img')
+            ->select('name','firstname','fonction','img')
             ->get();
 
         return view('welcome', ['content' => $content, 'collabs' => $collabs]);

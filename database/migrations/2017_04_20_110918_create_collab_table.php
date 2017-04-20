@@ -16,6 +16,7 @@ class CreateCollabTable extends Migration
         Schema::create('collab', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('firstname');
             $table->string('img');
             $table->string('fonction');
             $table->timestamps();

@@ -22,8 +22,12 @@
                     <!-- form start -->
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="name">Nom - Prénom</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Jean David" required>
+                                <label for="name">Nom</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Dupond" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="firstname">Prénom</label>
+                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Jean" required>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Fonction</label>

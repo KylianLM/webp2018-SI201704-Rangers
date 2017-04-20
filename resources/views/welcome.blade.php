@@ -106,6 +106,8 @@
                     <div class="item_title title">
                         <h1 class="title_main">
                            {{$collab->name}}
+                            <br>
+                            {{$collab->firstname}}
                         </h1>
                         <h2 class="title_scd">
                            {{$collab->fonction}}
