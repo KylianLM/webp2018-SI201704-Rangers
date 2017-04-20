@@ -30,6 +30,9 @@
                     </div>
                 </div>
             </div>
+            <form action="{{route('content.update')}}" method="post">
+                {{method_field('PUT')}}
+                {{csrf_field()}}
             @foreach($content as $d)
                 @isset(json_decode($d->meta)->size)
                 @if(json_decode($d->meta)->size === 'small')
@@ -50,6 +53,8 @@
                     </div>
                     @endisset
                     @endforeach
+                        <button type="submit" class="btn btn-info btn-flat pull-right">Modifier</button>
+            </form>
         </section>
         <!-- /.content -->
     </div>

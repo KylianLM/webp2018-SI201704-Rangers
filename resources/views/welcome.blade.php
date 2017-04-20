@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{$config['App_title']}}</title>
-    <meta name="description" content="">
+    <meta name="description" content="{{$config['App_description']}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
 
@@ -283,12 +283,12 @@
                     <div class="sct_cnt cnt">
                         <p class="cnt_pg">
                             <strong>Adresse :</strong>
-                            278 rue de Rosny 93100
+                           {{$config['Contact_address']}}
                             <br>
-                            Montreuil
+                           {{$config['Contact_ville']}}
                         </p>
                         <p class="cnt_pg">
-                            <strong>Télephone :</strong> 01 43 52 74 02
+                            <strong>Télephone :</strong> {{$config['Contact_phone']}}
                         </p>
                     </div>
                 </div>

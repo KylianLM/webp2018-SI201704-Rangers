@@ -31,8 +31,9 @@ Route::group([
     //Messages
     Route::resource('message','MessageController');
     Route::resource('content', 'ContentController',[
-        'except' => ['store', 'destroy']
+        'except' => ['store', 'destroy','update']
     ]);
+    Route::put('content','ContentController@update')->name('content.update');
     Route::resource('collaborateurs','CollabController');
 });
 

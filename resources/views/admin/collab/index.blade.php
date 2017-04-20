@@ -15,7 +15,8 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">{{json_decode($content->meta)->name}}</h3>
                 </div>
-                <form action="">
+                <form action="{{route('content.update')}}" method="post">
+                    {{method_field('PUT')}}
                     {{csrf_field()}}
                     <div class="box-body">
                         <textarea id="description" class="form-control" name="{{$content->slug}}"

@@ -21,7 +21,8 @@ class CreateMessagesTable extends Migration
             $table->string('subject');
             $table->text('body');
             $table->boolean('callback')->default(false);
-            $table->string('label');
+            $table->time('time')->nullable();
+            $table->string('label')->default(false);
             $table->timestamps();
         });
     }

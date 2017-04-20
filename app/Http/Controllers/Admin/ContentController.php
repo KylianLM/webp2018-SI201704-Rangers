@@ -74,12 +74,16 @@ class ContentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        foreach ($request->except('_token','_method') as $k => $v) {
+          \DB::table('content')
+              ->where('slug','=',$k)
+              ->update(['content' => $v]);
+        }
+        return back();
     }
 
     /**

@@ -45,7 +45,16 @@ class MessageController extends Controller
      */
     public function store(StoreMessage $request)
     {
-        return response()->json('ok');
+
+        if (Message::where('email',"=", $request->get('email'))->count() >= 3)
+            return response()->json(['error' => 'Not authorized.'],403);
+
+        if (Message::where('phone',"=", $request->get('phone'))->count() >= 3)
+            return response()->json(['error' => 'Not authorized.'],403);
+
+        Message::create($request->except('_token'));
+
+        return response(200);
     }
 
     /**
