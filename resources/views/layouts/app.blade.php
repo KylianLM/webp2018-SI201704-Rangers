@@ -80,7 +80,7 @@
                 <li class="header">MAIN NAVIGATION</li>
                 <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
                 <li><a href="{{route('content.index')}}"><i class="fa fa-pencil-square-o"></i><span>Contenu</span></a></li>
-                <li><a href=""><i class="fa fa-users"></i><span>Collborateurs</span></a></li>
+                <li><a href="{{route('collaborateurs.index')}}"><i class="fa fa-users"></i><span>Collborateurs</span></a></li>
                 <li><a href="{{route('config')}}"><i class="fa fa-cogs"></i> <span>Préférences</span></a></li>
                 <li class="header">MESSAGES</li>
                 <li><a href="{{route('message.index')}}"><i class="fa fa-circle-o text-aqua"></i> <span>Tous les messages</span></a></li>
