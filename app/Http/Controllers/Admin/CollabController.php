@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class CollabController extends Controller
 {
@@ -50,8 +51,22 @@ class CollabController extends Controller
      */
     public function store(Request $request)
     {
+        $file = $request->file('img');
+        $input['img'] = time().'.'.$file->getClientOriginalExtension();
+
+        $dist = public_path('profil');
+
+        $img = Image::make($file->getRealPath());
+
+        $img->resize(200, 200, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save($dist.'/'.$input['img']);
+
+        $request->merge(['img' => $input['img']]);
+        $request->offsetUnset('_token');
+
         \DB::table('collab')
-        ->insert($request->except('_token'));
+        ->insert($request->input());
 
         return redirect()->route('collaborateurs.index')->with('collaborateur_add', 'Collaborateur ajouté');
     }

@@ -98,48 +98,23 @@
                 </div>
             </div>
             <div class="sct_carousel owl-carousel about-carousel">
+                @foreach($collabs as $collab)
                 <div class="item">
                     <div class="item_container">
-                        <img class="item_img" src="img/profil.jpg" alt="#">
+                        <img class="item_img" src="/profil/{{$collab->img}}" alt="#">
                     </div>
                     <div class="item_title title">
                         <h1 class="title_main">
-                            Ulrique <br> David
+                           {{$collab->name}}
                         </h1>
                         <h2 class="title_scd">
-                            Directeur Associé
+                           {{$collab->fonction}}
                         </h2>
                     </div>
                 </div>
-                <div class="item">
-                    <div class="item_container">
-                        <img class="item_img" src="img/profil.jpg" alt="#">
-                    </div>
-                    <div class="item_title title">
-                        <h1 class="title_main">
-                            Denis <br> Alexandre
-                        </h1>
-                        <h2 class="title_scd">
-                            Directeur Associé
-                            <br>et Manager
-                        </h2>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item_container">
-                        <img class="item_img" src="img/bg@3x.jpg" alt="#">
-                    </div>
-                    <div class="item_title title">
-                        <h1 class="title_main">
-                            Denis <br> Alexandre
-                        </h1>
-                        <h2 class="title_scd">
-                            Directeur Associé
-                            <br>et Manager
-                        </h2>
-                    </div>
-                </div>
+               @endforeach
             </div>
+        </div>
     </section>
     <section class="sct" id="sct-carousel">
         <div class="sct_cont">

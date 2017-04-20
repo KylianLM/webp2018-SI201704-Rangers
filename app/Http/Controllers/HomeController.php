@@ -17,6 +17,10 @@ class HomeController extends Controller
         });
         $content->all();
 
-        return view('welcome', ['content' => $content]);
+        $collabs = \DB::table('collab')
+            ->select('name','fonction','img')
+            ->get();
+
+        return view('welcome', ['content' => $content, 'collabs' => $collabs]);
     }
 }

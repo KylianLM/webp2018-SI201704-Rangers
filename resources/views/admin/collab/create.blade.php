@@ -12,7 +12,7 @@
 
         <!-- Main content -->
         <section class="content">
-            <form action="{{route('collaborateurs.store')}}" method="POST">
+            <form action="{{route('collaborateurs.store')}}" method="POST" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="box box-primary">
                     <div class="box-header with-border">
@@ -20,7 +20,6 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form">
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="name">Nom - Prénom</label>
@@ -42,7 +41,6 @@
                         <div class="box-footer">
                             <button type="submit" class="btn btn-success pull-right">Ajouter</button>
                         </div>
-                    </form>
                 </div>
             </form>
         </section>
