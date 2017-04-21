@@ -7,8 +7,13 @@
             loop: true,
             dots: false,
             nav: false,
+            center : true,
             smartSpeed : 1000,
             fluidSpeed : 1000,
+            mouseDrag               : false,
+            touchDrag               : false,
+            pullDrag               : false,
+            freeDrag               : false,
             responsive:{
                 0:{
                     stagePadding: 0
@@ -25,6 +30,7 @@
         $first.owlCarousel({
             loop: true,
             nav: true,
+            center : true,
             dots: false,
             reponsive : true,
             smartSpeed : 1000,
@@ -82,11 +88,11 @@
                 }
             }
         });
-        $first.on('changed.owl.carousel', function (event) {
-            $second.trigger('to.owl.carousel', [event.item.index, 1000]);
+        $first.on('click', '.owl-next', function () {
+            $second.trigger('next.owl.carousel')
         });
-        $second.on('changed.owl.carousel', function (event) {
-            $first.trigger('to.owl.carousel', [event.item.index, 1000]);
+        $first.on('click', '.owl-prev', function () {
+            $second.trigger('prev.owl.carousel')
         });
     });
 }());

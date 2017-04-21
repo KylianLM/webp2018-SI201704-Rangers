@@ -45,7 +45,30 @@ textarea {
     font-weight: 400;
     font-size: 16px;
 }
+/*CALLBACK*/
+.form_callback {
+    background: #111752;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    margin-bottom: -50px;
+    font-size: 14px;
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.callback_cross {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
 
+.form_callback p {
+    float: left;
+}
+.form_input_error {
+    color: #e61424;
+}
 .input-phone {
     width: 80%;
     min-width: 80%;

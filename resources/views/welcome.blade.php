@@ -242,7 +242,7 @@
                     </div>
                 </div>
                 <form class="sct-form form sct_col col-8" name="contact">
-                    {{csrf_field()}}
+
                     <div class="form_cont">
                         <div class="sct_row">
                             <div class="sct_col col-6">
@@ -251,7 +251,7 @@
                                 <input id="tel" type="tel" class="form_input input-text" placeholder="" name="">
                             </div>
                             <div class="sct_col col-6">
-                                <label for="name" class="form_label">Nom Prénom</label>
+                                <label for="name" class="form_label">Nom Prénom *</label>
                                 <input id="name" type="text" class="form_input input-text" placeholder="" name="">
                             </div>
                         </div>
@@ -261,13 +261,13 @@
                                 <input id="email" type="email" class="form_input input-phone" placeholder="" name="">
                             </div>
                             <div class="sct_col col-6">
-                                <label for="subject" class="form_label">Sujet du message</label>
+                                <label for="subject" class="form_label">Sujet du message *</label>
                                 <input id="subject" type="text" class="form_input input-text" placeholder="" name="">
                             </div>
                         </div>
                         <div class="sct_row">
                             <div class="sct_col col-12">
-                                <label for="message" class="form_label">Message</label>
+                                <label for="message" class="form_label">Message *</label>
                                 <textarea id="message" class="form_input input-textarea" name=""></textarea>
                             </div>
                         </div>
@@ -285,6 +285,7 @@
                                 </div>
                             </div>
                             <div class="sct_col col-4">
+                                {{csrf_field()}}
                                 <input type="submit" class="form_input input-submit" value="Envoyer">
                             </div>
                         </div>
