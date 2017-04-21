@@ -1,16 +1,100 @@
-#sct-intro:not(.sct-loaded) .sct_cont{
-    bottom:-100%;
-    transition: all  1s;
-}
-#sct-intro .sct_cont{
-    bottom:0;
+
+.sct .sct_cont > div {
+    opacity: 0;
     transition: all 1s;
 }
-#sct-intro #bgvid{
-    opacity: 1;
-    transition: all  1s;
+
+.sct .sct_cont > div:first-child {
+    transform: translateX(-20%);
+    transition: all 1s;
 }
-#sct-intro:not(.sct-loaded) #bgvid{
+
+.sct .sct_cont > div:last-child {
+    transform: translateX(20%);
+    transition: all 1s;
+}
+
+.sct-loaded .sct_cont > div:first-child,
+.sct-loaded .sct_cont > div:last-child {
+    transform: translateX(0);
+    transition: all 1s;
+
+}
+.sct-loaded .sct_cont > div{
+    opacity: 1;
+    transition: all 1s;
+}
+.sct .sct_cont > div:first-child.sct_title {
     opacity: 0;
-    transition: all  1s;
+    transition: all 1s 1s;
+    transform: translateX(0);
+}
+
+.sct-loaded .sct_cont > div:first-child.sct_title {
+    opacity: 1;
+    transition: all 1s 1s;
+    transform: translateX(0);
+}
+
+#sct-intro .sct_cont {
+    opacity: 0;
+    transition: all 1s;
+}
+@media all and (min-width: 768px) {
+    #sct-intro .sct_cont {
+        bottom: -10%;
+    }
+}
+#sct-intro.sct-loaded .sct_cont {
+    bottom: 0;
+    opacity: 1;
+    transition: all 1s;
+}
+
+#sct-intro.sct-loaded #bgvid {
+    opacity: 1;
+    transition: all 1s;
+}
+
+#sct-intro #bgvid {
+    opacity: 0;
+    transition: all 1s;
+}
+
+#sct-intro .sct_cnt,
+.main .header_nav {
+    opacity: 0;
+    transition: all .7s;
+}
+
+.main-loaded #sct-intro .sct_cnt,
+.main-loaded .header_nav {
+    opacity: 1;
+    transition: all .7s;
+}
+
+#sct-intro .sct_title:after,
+#sct-intro .title_main:before,
+#sct-intro .title_main:after {
+    opacity: 0;
+    transition: all .4s 1s;
+    transform: translate(-50%, -50%);
+}
+
+.main-loaded #sct-intro .sct_title:after,
+.main-loaded #sct-intro .title_main:before,
+.main-loaded #sct-intro .title_main:after {
+    opacity: 1;
+    transition: all .4s 1s;
+    transform: translate(0, 0);
+}
+
+.main .header_bg {
+    top: -150px;
+    transition: all .4s;
+}
+
+.main-loaded .header_bg {
+    top: 0;
+    transition: all .4s;
 }

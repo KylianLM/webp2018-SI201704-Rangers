@@ -20,9 +20,10 @@ class Message extends Model
         'body',
         'callback',
         'label',
+        'time'
     ];
 
     protected $dates = [
-      'created_at'
+      'created_at',
     ];
 }

@@ -1,12 +1,69 @@
 (function () {
     $(document).ready(function () {
+        $('.date_row').hide();
+        $('#rappel').change(function () {
+            if ($(this).is(":checked")) {
+                $('.date_row').show();
+            } else {
+                $('.date_row').hide();
+            }
+        });
+        $('form[name="contact"]').submit(function (e) {
+            e.preventDefault();
+            var body = $('#message').val(),
+                subject = $('#subject').val(),
+                email = $('#email').val(),
+                name = $('#name').val(),
+                callback = ($('#rappel').is(':checked')) ? 1 : 0,
+                token = $('input[name="_token"]').attr('value'),
+                time = (callback) ? $('#datetimepicker').attr('value') : '',
+                phone = $('#tel').val();
+            console.log(token, body, subject, email, name, phone);
+
+            if (body != "" && subject != "" && email != "" && name != "" && phone != "" && token != "") {
+                $.ajax({
+                    method: "POST",
+                    url: "/admin/message/",
+                    data: {
+                        email: email,
+                        phone: phone,
+                        name: name,
+                        subject: subject,
+                        body: body,
+                        _token: token,
+                        time: time,
+                        callback: callback
+                    }
+                })
+                    .fail(function () {
+                        alert("error");
+                    })
+                    .done(function (msg) {
+                        alert("Data Saved: " + msg);
+                    });
+            }
+        });
+
+        $.datetimepicker.setLocale('fr_FR');
+        $('#datetimepicker').datetimepicker({
+            datepicker:false,
+            format: 'H:i',
+            lang: 'fr',
+            mask:true
+        });
         //scroll
         $('.scroll-to').click(function (event) {
             event.preventDefault();
             scrollTo($(this));
         });
-        $(window).scroll(function(){
-            $('.sct').each(function(){
+        $('.header-mob').click(function (event) {
+            event.preventDefault();
+            toggleBurger();
+        });
+        $(window).resize(closeBurger);
+        $('.list-header .item_link').click(closeBurger);
+        $(window).scroll(function () {
+            $('.sct').each(function () {
                 deltaTop($(this).attr('id'));
             });
         });
@@ -24,7 +81,7 @@
     };
     var activedots = function (x) {
 
-        if(x == 'sct-number') x = 'sct-carousel';
+        if (x == 'sct-number') x = 'sct-carousel';
         var items = $('.list-header .item'),
             xRef = '#' + $(x).attr('href');
         items.removeClass('item-active');
@@ -35,8 +92,24 @@
             }
         });
     }
+    var closeBurger = function () {
+        var $header = $('header');
+        if ($header.hasClass('header-open')) {
+            $header.removeClass('header-open');
+            $('body').removeClass('head-op');
+        }
+    }
+    var toggleBurger = function (elem) {
+        if (!$('header').hasClass('header-open')) {
+            $('header').addClass('header-open');
+            $('body').addClass('head-op');
+        } else {
+            $('header').removeClass('header-open');
+            $('body').removeClass('head-op');
+        }
+    }
     var deltaTop = function (elem) {
-        var elemTarget = $('#'+elem);
+        var elemTarget = $('#' + elem);
         if (elemTarget.length) {
             var elemTargetH = elemTarget.height() - 47,
                 deltaIn = elemTarget.offset().top - 47,

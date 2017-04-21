@@ -39,6 +39,8 @@
             nav: true,
             dots: false,
             autoplay:true,
+            smartSpeed : 1000,
+            fluidSpeed : 1000,
             navText: ["<span class='icon icon-prev'></span>","<span class='icon icon-next'></span>"],
             responsive:{
                 0:{
@@ -54,16 +56,25 @@
                     items: 4
                 }
             },
-            autoplayTimeout: 2000,
+            autoplayTimeout: 1500,
             autoplaySpeed: 1000
         });
         $('.about-carousel').owlCarousel({
             loop: true,
             dots: false,
             nav: true,
+            smartSpeed : 1000,
+            fluidSpeed : 1000,
             navText: ["<span class='icon icon-prev'></span>","<span class='icon icon-next'></span>"],
             responsive:{
                 0:{
+                    items:1
+                },
+                465:{
+                    items:2,
+                    margin: 50
+                },
+                768:{
                     items:1
                 },
                 990:{

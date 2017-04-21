@@ -11,7 +11,7 @@
     <title>{{$config['App_title']}}</title>
 
     <!-- Styles -->
-    <link href="css/admin.css" rel="stylesheet">
+    <link href="/css/admin.css" rel="stylesheet">
     <!-- Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
@@ -79,6 +79,9 @@
             <ul class="sidebar-menu">
                 <li class="header">MAIN NAVIGATION</li>
                 <li><a href="{{route('admin')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                <li><a href="{{route('content.index')}}"><i class="fa fa-pencil-square-o"></i><span>Contenu</span></a></li>
+                <li><a href="{{route('savoir.index')}}"><i class="fa fa-pencil-square-o"></i><span>Savoir faire</span></a></li>
+                <li><a href="{{route('collaborateurs.index')}}"><i class="fa fa-users"></i><span>Collborateurs</span></a></li>
                 <li><a href="{{route('config')}}"><i class="fa fa-cogs"></i> <span>Préférences</span></a></li>
                 <li class="header">MESSAGES</li>
                 <li><a href="{{route('message.index')}}"><i class="fa fa-circle-o text-aqua"></i> <span>Tous les messages</span></a></li>
@@ -98,7 +101,7 @@
         <div class="pull-right hidden-xs">
             <b>Version</b> 1.0.0
         </div>
-        <strong>Copyright &copy; 2017<a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+        <strong>Copyright &copy; 2017.</strong> All rights
         reserved.
     </footer>
 
@@ -108,7 +111,7 @@
 <!-- ./wrapper -->
 
     <!-- Scripts -->
-    <script src="js/jquery.js"></script>
-    <script src="js/admin.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/admin.js"></script>
 </body>
 </html>

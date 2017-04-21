@@ -7,7 +7,7 @@
 }
 
 #sct-intro .sct_cont {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.8);
     position: absolute;
     bottom: 0;
     right: 0;
@@ -31,9 +31,36 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 26px;
-    line-height: 32px;
+    font-size: 18px;
+    line-height: 44px;
     letter-spacing: 1px;
+}
+
+#sct-intro .sct_title:after,
+#sct-intro .title_main:before,
+#sct-intro .title_main:after {
+    content: '';
+    display: block;
+    width: 17px;
+    height: 2px;
+    background: #111752;
+    position: absolute;
+    left: 0;
+    top: -20%;
+}
+
+#sct-intro .sct_title:after {
+    right: 10%;
+    left: auto;
+    bottom: 35%;
+    top: auto;
+    height: 17px;
+    width: 2px;
+}
+
+#sct-intro .title_main:before {
+    top: auto;
+    bottom: -20%;
 }
 
 #sct-intro .sct_cnt {
@@ -43,11 +70,13 @@
     line-height: 1;
     width: 84%;
 }
-#sct-intro .sct_button{
+
+#sct-intro .sct_button {
     display: inline-block;
-    padding: 12px 15px;
+    padding: 12px 13px;
     margin-top: 20px;
 }
+
 /*VIDEO*/
 .vid-filter {
     width: 100px;
@@ -90,45 +119,60 @@
     position: relative;
     display: block;
 }
-.list-sociaux .icon{
+
+.list-sociaux .icon {
     position: absolute;
-    top:50%;
-    left:50%;
+    top: 50%;
+    left: 50%;
     color: #fff;
     font-size: 12px;
-    text-decoration:none;
-    transform: translate(-50%,-50%);
+    text-decoration: none;
+    transform: translate(-50%, -50%);
 
 }
+
 .list-sociaux .icon:hover,
 .list-sociaux .icon:focus,
-.list-sociaux .icon:active{
-    text-decoration:none;
+.list-sociaux .icon:active {
+    text-decoration: none;
 }
+
 .list-sociaux .item + .item {
     margin-left: 30px;
 }
+
 @media all and (min-width: 768px) {
     #sct-intro .sct_cont {
         width: 80%;
         height: calc(100% - 70px);
     }
+
     #sct-intro .title_main {
         width: 80%;
         max-width: 580px;
         font-size: 28px;
-        line-height: 40px;
+        line-height: 52px;
         letter-spacing: 1px;
     }
+
     .vid-filter {
         width: 200px;
         height: 200px;
     }
+    #sct-intro .sct_title:after {
+        right: 10%;
+        bottom: 25%;
+    }
 }
+
 @media all and (min-width: 990px) {
     #sct-intro .title_main {
         font-size: 36px;
-        line-height: 48px;
+        line-height: 64px;
         letter-spacing: 3px;
+    }
+    #sct-intro .sct_title:after {
+        right: 10%;
+        bottom: 22%;
     }
 }

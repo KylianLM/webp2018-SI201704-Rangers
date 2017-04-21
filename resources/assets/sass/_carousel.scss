@@ -19,7 +19,7 @@
 .owl-nav > div {
     display: inline-block;
     background: #ffd740;
-    padding: 10px 15px;
+    padding: 15px;
     opacity: 1;
     transition: all .2s;
 }
@@ -30,7 +30,6 @@
     opacity: 0.8;
     transition: all .2s;
 }
-
 .owl-stage,
 .owl-item,
 .owl-stage-outer {
@@ -76,16 +75,6 @@
     margin-bottom: 380px;
 }
 
-.second-carousel .owl-item {
-    opacity: 0.2;
-    transition: opacity .7s;
-}
-
-.second-carousel .owl-item.active {
-    opacity: 1;
-    transition: opacity .7s;
-}
-
 .second-carousel .owl-item .item {
     height: 210px;
 }
@@ -117,7 +106,7 @@
 
     .first-carousel .owl-nav {
         bottom: -2px;
-        right: -10%;
+        right: -12%;
         top: auto;
         left: auto;
         background: #fff;

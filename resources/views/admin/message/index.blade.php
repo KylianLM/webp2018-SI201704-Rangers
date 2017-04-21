@@ -29,6 +29,7 @@
                             <th class="col-md-1">Téléphone</th>
                             <th class="col-md-3">Sujet</th>
                             <th class="col-md-2">Ajouté le</th>
+                            <th>Heure de rappel</th>
                             <th class="col-md-2">Actions</th>
                         </tr>
                         </thead>
@@ -40,6 +41,7 @@
                                 <td>{{$message->phone}}</td>
                                 <td>{{$message->subject}}</td>
                                 <td>{{$message->created_at->format('j F Y à H:i')}}</td>
+                                <td>{{$message->time}}</td>
                                 <td>
                                     <form action="{{ route('message.destroy', $message->id) }}" method="POST"
                                           class="pull-right">
