@@ -274,12 +274,12 @@
                         <div class="sct_row">
                             <div class="sct_col col-8">
                                 <div>
-                                    <label for="rappel" class="form_label form_label-inline">Souhaitez vous être appellé
+                                    <label for="rappel" class="form_label form_label-inline">Souhaitez vous être appelé
                                         ?</label>
                                     <input id="rappel" type="checkbox" class="form_input input-checkbox" placeholder=""
                                            name="">
                                 </div>
-                                <div>
+                                <div class="date_row">
                                     <label for="datetimepicker" class="form_label form_label-inline">Heure</label>
                                     <input id="datetimepicker" class="form_input input-date" type="text" name="time"/>
                                 </div>
@@ -308,19 +308,7 @@
 <script src="js/carousel.js"></script>
 <script src="js/video.js"></script>
 <script src="js/animations.js"></script>
-<script>
-    function initMap() {
-        var paris = {lat: 48.8699607, lng: 2.4652697};
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: paris
-        });
-        var marker = new google.maps.Marker({
-            position: paris,
-            map: map
-        });
-    }
-</script>
+<script src="js/maps.js"></script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9a-A8TwipFNZSZ0LXtPBarlEdGJe_-AU&callback=initMap"></script>
 </body>

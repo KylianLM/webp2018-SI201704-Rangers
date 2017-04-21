@@ -24,6 +24,6 @@ class Message extends Model
     ];
 
     protected $dates = [
-      'created_at'
+      'created_at',
     ];
 }

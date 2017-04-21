@@ -30,9 +30,9 @@ class MessageController extends Controller
     public function index(Request $request)
     {
        if ($request->get('label') === 'important') {
-           $messages = Message::where('label', '=', 'important')->get();
+           $messages = Message::where('label', '=', 'important')->orderBy('created_at','desc')->get();
        } else {
-           $messages = Message::get();
+           $messages = Message::orderBy('created_at','desc')->get();
        }
         return view('admin.message.index',['messages' => $messages]);
     }

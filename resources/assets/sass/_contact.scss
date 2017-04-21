@@ -5,7 +5,9 @@
     text-transform: uppercase;
     font-size: 16px;
 }
-
+#sct-contact{
+    min-height: 0;
+}
 #sct-contact .sct_cont {
     padding: 0;
     max-width: none;
@@ -20,13 +22,19 @@
     margin: 0;
     padding: 5% 10%;
 }
-
+#sct-contact .sct_cont > .sct_row{
+    z-index: 10;
+    position: relative;
+}
 #sct-contact > .sct_cont > .sct_row > .sct_col.form {
     padding: 20px;
+    z-index: 3;
 }
-textarea{
+
+textarea {
     resize: none;
 }
+
 .form_input {
     border: 0;
     display: inline-block;
@@ -60,9 +68,11 @@ textarea{
 .form .sct_row:last-child .sct_col {
     border: 0;
 }
+
 .form_cont > .sct_row:first-child > .sct_col:first-child {
     border-bottom: 0;
 }
+
 .form .sct_row:last-child .sct_col:last-child {
     padding: 0;
 }
@@ -70,6 +80,7 @@ textarea{
 .form .sct_row + .sct_row .sct_col {
     border-top: 0;
 }
+
 .form .sct_col {
     padding: 20px;
     border: 1px solid #979797;
@@ -82,7 +93,15 @@ textarea{
     display: inline-block;
     margin-right: 5px;
 }
-
+.input-phone{
+    width:auto;
+    min-width: 0;
+}
+.input-phone + .form_input{
+    vertical-align: baseline;
+    width: 70%;
+    min-width: 0;
+}
 .input-phone:before {
     content: '+.33';
     vertical-align: middle;
@@ -102,6 +121,7 @@ textarea{
     border: 1px solid #979797;
     box-shadow: 0;
     margin: 0;
+    min-width: 0;
 }
 
 .input-submit {
@@ -115,19 +135,33 @@ textarea{
     width: 100%;
     cursor: pointer;
     opacity: 1;
-    transition : all .3s;
+    transition: all .3s;
 }
+
 .input-submit:hover,
 .input-submit:active,
-.input-submit:focus{
+.input-submit:focus {
     opacity: 0.8;
-    transition : all .3s;
+    transition: all .3s;
 }
+
 #map {
     margin-top: -100px;
     height: 480px;
     width: 100%;
-    z-index: -1;
+    z-index: 0;
+}
+.date_row .form_input{
+    width: 50px;
+    min-width: 50px;
+    background: #ffd740;
+    color: #111752;
+    padding-left: 10px;
+    margin-top: 5px;
+}
+.date_row .form_label{
+    width: auto;
+    margin-right: 10px;
 }
 
 @media all and (min-width: 580px) {
@@ -135,9 +169,11 @@ textarea{
     .form .sct_row .sct_col.col-6:first-child {
         border-right: 0;
     }
+
     .form_cont > .sct_row:first-child > .sct_col:first-child {
         border-bottom: 1px solid #979797;
     }
+
     #sct-contact .cnt {
         clear: both;
         overflow: hidden;
@@ -163,13 +199,15 @@ textarea{
 }
 
 @media all and (min-width: 768px) {
-
     #sct-contact .sct_cont > .sct_row {
         display: flex;
     }
 
     .form_input {
         min-width: 100%;
+    }
+    .input-checkbox{
+        min-width: 0;
     }
 
     .form .sct_col {
@@ -203,6 +241,7 @@ textarea{
     #sct-contact .cnt .cnt_pg {
         width: 100%;
         float: none;
+        margin-bottom: 20px;
     }
 
     .form .sct_row .sct_col.col-6:first-child {
@@ -216,7 +255,6 @@ textarea{
     .input-submit {
         padding: 0;
     }
-
     #sct-contact > .sct_cont > .sct_row > .sct_col {
         padding: 5% 6%;
     }
