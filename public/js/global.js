@@ -10,46 +10,82 @@
         });
         $('form[name="contact"]').submit(function (e) {
             e.preventDefault();
+            $('.form_callback').remove();
+            $('.form_input').removeClass('form_input_error');
             var body = $('#message').val(),
                 subject = $('#subject').val(),
                 email = $('#email').val(),
                 name = $('#name').val(),
                 callback = ($('#rappel').is(':checked')) ? 1 : 0,
                 token = $('input[name="_token"]').attr('value'),
-                time = (callback) ? $('#datetimepicker').attr('value') : '',
+                time = (callback) ? $('#datetimepicker').val() : '',
                 phone = $('#tel').val();
-            console.log(token, body, subject, email, name, phone);
 
-            if (body != "" && subject != "" && email != "" && name != "" && phone != "" && token != "") {
-                $.ajax({
-                    method: "POST",
-                    url: "/admin/message/",
-                    data: {
-                        email: email,
-                        phone: phone,
-                        name: name,
-                        subject: subject,
-                        body: body,
-                        _token: token,
-                        time: time,
-                        callback: callback
+            $.ajax({
+                method: "POST",
+                url: "admin/message/",
+                data: {
+                    email: email,
+                    phone: phone,
+                    name: name,
+                    subject: subject,
+                    body: body,
+                    _token: token,
+                    time: time,
+                    callback: callback
+                }
+            }).fail(function (msg) {
+                console.log(msg);
+                if (msg.status == '403') {
+                    msg = 'Vous avez atteint le maximum de 3 messages à envoyer.';
+
+                } else {
+                    var fields = Object.keys(msg.responseText);
+                    console.log(fields);
+                    for (var i = 0; i < fields.length; i++) {
+                        var field = fields[i];
+                        if (field == 'body') {
+                            field = 'message';
+                        } else if (field == 'callback') {
+                            field = 'rappel';
+                        } else if (field == 'time') {
+                            field = 'datetimepicker';
+                        } else if (field == 'phone') {
+                            field = 'tel';
+                        }
+
+                        $('#' + fields[i]).addClass('form_input_error');
                     }
-                })
-                    .fail(function () {
-                        alert("error");
-                    })
-                    .done(function (msg) {
-                        alert("Data Saved: " + msg);
-                    });
-            }
+                    msg = 'Merci de saisir tous les champs nécessaires.';
+                }
+
+                var callback = '<div class="form_callback">' +
+                    '<p>' + msg + '</p>' +
+                    '<a href="#" class="callback_cross">x</a>' +
+                    '</div>';
+
+                $('form[name="contact"]').prepend(callback);
+
+            }).done(function (msg) {
+                msg = JSON.parse(msg);
+                console.log(msg);
+                if (msg.status == '200') {
+                    msg = 'Votre message à bien été envoyé.';
+                }
+                var callback = '<div class="form_callback">' +
+                    '<p style="">' + msg + '</p>' +
+                    '</div>';
+
+                $('form[name="contact"]').prepend(callback);
+            });
         });
 
         $.datetimepicker.setLocale('fr_FR');
         $('#datetimepicker').datetimepicker({
-            datepicker:false,
+            datepicker: false,
             format: 'H:i',
             lang: 'fr',
-            mask:true
+            mask: true
         });
         //scroll
         $('.scroll-to').click(function (event) {

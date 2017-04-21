@@ -29,6 +29,10 @@ class ConfigController extends Controller
         return view('admin.config.index', ['data' => $data]);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         $config = collect($request->input());

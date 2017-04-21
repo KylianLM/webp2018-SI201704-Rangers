@@ -54,7 +54,7 @@ class MessageController extends Controller
 
         Message::create($request->except('_token'));
 
-        return response(200);
+        return response()->json([],200);
     }
 
     /**
