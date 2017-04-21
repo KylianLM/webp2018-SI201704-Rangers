@@ -30,6 +30,9 @@ Route::group([
 
     //Messages
     Route::resource('message','MessageController');
+    Route::resource('savoir','SavoirController',[
+        'except' => ['store','create','destroy','show']
+    ]);
     Route::resource('content', 'ContentController',[
         'except' => ['store', 'destroy','update']
     ]);
