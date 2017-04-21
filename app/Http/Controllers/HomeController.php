@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,6 +22,9 @@ class HomeController extends Controller
             ->select('name','firstname','fonction','img')
             ->get();
 
-        return view('welcome', ['content' => $content, 'collabs' => $collabs]);
+        $articles = Article::where('visible', '=', 1)
+            ->get();
+
+        return view('welcome', ['content' => $content, 'collabs' => $collabs, 'articles' => $articles]);
     }
 }

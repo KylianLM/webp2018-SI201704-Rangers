@@ -32,7 +32,9 @@
                                 <td>{{$article->id}}</td>
                                 <td>{{$article->title}}</td>
                                 <td>{{str_limit($article->body, $limit = 150, $end = '...')}}</td>
-                                <td></td>
+                                <td>
+                                    <a href="{{route('savoir.edit',$article->id)}}" class="btn btn-flat btn-primary">Editer</a>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>

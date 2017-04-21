@@ -108,105 +108,54 @@
                 </div>
                 <div class="sct_cnt cnt">
                     <p class="cnt_pg">
-                       {!! $content['collaborateur'] !!}
+                        {!! $content['collaborateur'] !!}
                     </p>
                 </div>
             </div>
             <div class="sct_carousel owl-carousel about-carousel">
                 @foreach($collabs as $collab)
-                <div class="item">
-                    <div class="item_container">
-                        <img class="item_img" src="/profil/{{$collab->img}}" alt="#">
+                    <div class="item">
+                        <div class="item_container">
+                            <img class="item_img" src="/profil/{{$collab->img}}" alt="#">
+                        </div>
+                        <div class="item_title title">
+                            <h1 class="title_main">
+                                {{$collab->name}}
+                                <br>
+                                {{$collab->firstname}}
+                            </h1>
+                            <h2 class="title_scd">
+                                {{$collab->fonction}}
+                            </h2>
+                        </div>
                     </div>
-                    <div class="item_title title">
-                        <h1 class="title_main">
-                           {{$collab->name}}
-                            <br>
-                            {{$collab->firstname}}
-                        </h1>
-                        <h2 class="title_scd">
-                           {{$collab->fonction}}
-                        </h2>
-                    </div>
-                </div>
-               @endforeach
+                @endforeach
             </div>
         </div>
     </section>
     <section class="sct" id="sct-carousel">
         <div class="sct_cont">
             <div class="sct_carousel owl-carousel first-carousel">
-                <div class="item">
-                    <div class="item_title title">
-                        <h2 class="title_scd">
-                            Notre savoir faire
-                        </h2>
-                        <h1 class="title_main">
-                            Maçonnerie
-                        </h1>
+                @foreach($articles as $article)
+                    <div class="item">
+                        <div class="item_title title">
+                            <h2 class="title_scd">
+                                Notre savoir faire
+                            </h2>
+                            <h1 class="title_main">
+                                {{$article->title}}
+                            </h1>
+                        </div>
+                        <div class="item_cnt cnt">
+                            <p class="cnt_pg">{!!$article->body !!}</p>
+                        </div>
                     </div>
-                    <div class="item_cnt cnt">
-                        <p class="cnt_pg">U&D réalise tous travaux de maçonnerie,
-                            depuis les fondations jusqu'aux enduits de finition,
-                            en passant par les murs de soutènement, les escaliers monumentaux,
-                            etc.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item_title title">
-                        <h2 class="title_scd">
-                            Notre savoir faire
-                        </h2>
-                        <h1 class="title_main">
-                            Maçonnerie
-                        </h1>
-                    </div>
-                    <div class="item_cnt cnt">
-                        <p class="cnt_pg">U&D réalise tous travaux de maçonnerie,
-                            depuis les fondations jusqu'aux enduits de finition,
-                            en passant par les murs de soutènement, les escaliers monumentaux,
-                            etc.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item_title title">
-                        <h2 class="title_scd">
-                            Notre savoir faire
-                        </h2>
-                        <h1 class="title_main">
-                            Maçonnerie
-                        </h1>
-                    </div>
-                    <div class="item_cnt cnt">
-                        <p class="cnt_pg">U&D réalise tous travaux de maçonnerie,
-                            depuis les fondations jusqu'aux enduits de finition,
-                            en passant par les murs de soutènement, les escaliers monumentaux,
-                            etc.</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item_title title">
-                        <h2 class="title_scd">
-                            Notre savoir faire
-                        </h2>
-                        <h1 class="title_main">
-                            Maçonnerie
-                        </h1>
-                    </div>
-                    <div class="item_cnt cnt">
-                        <p class="cnt_pg">U&D réalise tous travaux de maçonnerie,
-                            depuis les fondations jusqu'aux enduits de finition,
-                            en passant par les murs de soutènement, les escaliers monumentaux,
-                            etc.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="sct_carousel owl-carousel second-carousel">
-                <div class="item"><img class="item_img" src="img/bg@3x.jpg" alt="#"></div>
-                <div class="item"><img class="item_img" src="img/bg@3x.jpg" alt="#"></div>
-                <div class="item"><img class="item_img" src="img/bg@3x.jpg" alt="#"></div>
-                <div class="item"><img class="item_img" src="img/bg@3x.jpg" alt="#"></div>
-                <div class="item"><img class="item_img" src="img/bg@3x.jpg" alt="#"></div>
+                @foreach($articles as $article)
+                    <div class="item"><img class="item_img" src="/slides/{{$article->img}}" alt="#"></div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -283,9 +232,9 @@
                     <div class="sct_cnt cnt">
                         <p class="cnt_pg">
                             <strong>Adresse :</strong>
-                           {{$config['Contact_address']}}
+                            {{$config['Contact_address']}}
                             <br>
-                           {{$config['Contact_ville']}}
+                            {{$config['Contact_ville']}}
                         </p>
                         <p class="cnt_pg">
                             <strong>Télephone :</strong> {{$config['Contact_phone']}}
