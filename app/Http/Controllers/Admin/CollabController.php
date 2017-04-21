@@ -22,15 +22,15 @@ class CollabController extends Controller
     public function index()
     {
         $content = \DB::table('content')
-            ->select('content','slug', 'meta')
-            ->where('meta->page',"=","collaborateur")
+            ->select('content', 'slug', 'meta')
+            ->where('meta->page', "=", "collaborateur")
             ->first();
 
         $collabs = \DB::table('collab')
-            ->select('name','firstname','fonction','created_at')
+            ->select('name', 'firstname', 'fonction', 'created_at', 'id')
             ->get();
 
-        return view('admin.collab.index',['content' => $content, 'collabs' => $collabs]);
+        return view('admin.collab.index', ['content' => $content, 'collabs' => $collabs]);
     }
 
     /**
@@ -46,7 +46,7 @@ class CollabController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -66,7 +66,7 @@ class CollabController extends Controller
         $request->offsetUnset('_token');
 
         \DB::table('collab')
-        ->insert($request->input());
+            ->insert($request->input());
 
         return redirect()->route('collaborateurs.index')->with('collaborateur_add', 'Collaborateur ajouté');
     }
@@ -74,7 +74,7 @@ class CollabController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -85,7 +85,7 @@ class CollabController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -96,8 +96,8 @@ class CollabController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -108,11 +108,15 @@ class CollabController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        \DB::table('collab')
+            ->where('id', '=', $id)
+            ->delete();
+
+        return back();
     }
 }

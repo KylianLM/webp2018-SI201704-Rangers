@@ -17,7 +17,7 @@
                     <!-- small box -->
                     <div class="small-box bg-aqua">
                         <div class="inner">
-                            <h3>44</h3>
+                            <h3>{{$countC}}</h3>
 
                             <p>Collaborateurs</p>
                         </div>
@@ -26,6 +26,22 @@
                         </div>
                         <a href="{{route('collaborateurs.index')}}" class="small-box-footer">
                             Modifer <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-yellow">
+                        <div class="inner">
+                            <h3>{{$countM}}</h3>
+
+                            <p>Messages</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <a href="{{route('message.index')}}" class="small-box-footer">
+                            Afficher <i class="fa fa-arrow-circle-right"></i>
                         </a>
                     </div>
                 </div>

@@ -23,8 +23,11 @@ class ContentController extends Controller
             ->select('content','slug', 'meta')
             ->where('meta->page',"=","content")
             ->get();
+        $countCollab = \DB::table('collab')->count();
+        $countMessage = \DB::table('messages')->count();
 
-        return view('admin.content.index',['content' => $content]);
+
+        return view('admin.content.index',['content' => $content, 'countC' => $countCollab , 'countM' => $countMessage]);
     }
 
     /**

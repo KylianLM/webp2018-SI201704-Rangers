@@ -34,7 +34,8 @@
                         <div class="box-header">
                             <h3 class="box-title">Collaborateurs</h3>
                             <div class="box-tools">
-                               <a href="{{route('collaborateurs.create')}}" class="btn btn-flat btn-primary">Ajouter</a>
+                                <a href="{{route('collaborateurs.create')}}"
+                                   class="btn btn-flat btn-primary">Ajouter</a>
                             </div>
                         </div>
                         <!-- /.box-header -->
@@ -56,7 +57,16 @@
                                         <td>{{$collab->firstname}}</td>
                                         <td>{{$collab->fonction}}</td>
                                         <td>{{Carbon\Carbon::parse($collab->created_at)->format('d/m/Y H:i')}}</td>
-                                        <td></td>
+                                        <td>
+                                            <form action="{{ route('collaborateurs.destroy', $collab->id) }}" method="POST"
+                                                  class="pull-right">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
+                                                <button type="submit" class="btn btn-danger btn-flat"><i
+                                                            class="fa fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
